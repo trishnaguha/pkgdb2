@@ -123,8 +123,8 @@
         </a>
       </td>
       <td>
-        {% if action.package or (action.action == 'request.package' and 
-              action.status == 'Approved') %}
+        {% if action.package or (action.package == None and action.action == 'request.package' 
+              and action.status == 'Approved') %}
           <a href="{{url_for('.package_info', package=action.package.name)}}">
             {{ action.package.name }}
           </a>
